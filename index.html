@@ -6,6 +6,10 @@
   <title>FEROX — Industrial Metals & Components</title>
   <meta name="description" content="FEROX — Compra especializada de cobre, bronce, transformadores y componentes industriales. Empresa industrial premium.">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="logo-ferox-white.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,17 +106,21 @@
     }
 
     .nav__logo {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      letter-spacing: 0.15em;
-      color: var(--white);
+      display: flex;
+      align-items: center;
+      line-height: 0;
     }
 
-    .nav__logo span {
-      background: linear-gradient(135deg, var(--accent-glow), var(--accent-ember));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .nav__logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
+      transition: transform 0.4s var(--ease-out-expo), filter 0.4s var(--ease-out-expo);
+    }
+
+    .nav__logo:hover .nav__logo-img {
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 10px rgba(232, 118, 47, 0.35));
     }
 
     .nav__links {
@@ -177,6 +185,9 @@
       background: var(--chrome-light);
       transition: all 0.3s;
     }
+
+    /* Menú mobile oculto por defecto (solo aparece en mobile al abrir) */
+    .nav__mobile { display: none; }
 
     /* ══════════════════════════════════════════════
        HERO
@@ -273,6 +284,19 @@
       z-index: 2;
       padding: 0 3rem;
       max-width: 900px;
+    }
+
+    .hero__logo {
+      opacity: 0;
+      animation: fadeSlideUp 1.1s var(--ease-out-expo) 0.25s forwards;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero__logo img {
+      height: clamp(90px, 13vw, 150px);
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 12px 40px rgba(0,0,0,0.6));
     }
 
     .hero__tag {
@@ -1163,7 +1187,9 @@
 
   <!-- ════════════════ NAVIGATION ════════════════ -->
   <nav class="nav" id="nav">
-    <div class="nav__logo">FEROX<span>.</span></div>
+    <a href="#" class="nav__logo" aria-label="FEROX — inicio">
+      <img src="logo-ferox-white.png" alt="FEROX" class="nav__logo-img">
+    </a>
     <ul class="nav__links">
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#materiales">Materiales</a></li>
@@ -1201,7 +1227,9 @@
     </div>
 
     <div class="hero__content">
-      <div class="hero__tag">Industrial metals & components</div>
+      <div class="hero__logo">
+        <img src="logo-ferox-white.png" alt="Logo FEROX">
+      </div>
       <h1 class="hero__title">FEROX</h1>
       <p class="hero__subtitle">Industrial Metals & Components</p>
       <p class="hero__desc">
