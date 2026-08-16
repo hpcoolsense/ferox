@@ -1,3 +1,15 @@
+> ## ⛔ HOSTING DADO DE BAJA — 2026-08-16
+> El proyecto `ferox` de **Vercel fue eliminado** y **GitHub Pages deshabilitado**. `www.feroxmetales.com`,
+> `ferox-six.vercel.app` y `hpcoolsense.github.io/ferox/` devuelven **404** (verificado 2026-08-16).
+> El dominio `feroxmetales.com` sigue registrado en **Hostinger** (vence 2027-06-16) con DNS apuntando a Vercel.
+>
+> **Para volver a hostear:** en Vercel → *Add New Project* → importar `hpcoolsense/ferox` (Framework: *Other*,
+> Root Directory `.`, sin build), asignar los dominios `feroxmetales.com` (redirect → www) y `www.feroxmetales.com`
+> (los DNS en Hostinger ya apuntan a Vercel), y prender el sitio (`cp site-live.html index.html` → push).
+> Vercel auto-deployaba este repo en cada push a `main`.
+>
+> Todo lo de abajo describe el mecanismo ON/OFF que había mientras estuvo hosteado.
+
 # Estado del sitio FEROX — Switch ON/OFF
 
 **Estado actual: 🔴 OFF (apagado)** — motivo: cuota de hosting impaga.
